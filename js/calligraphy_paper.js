@@ -1,11 +1,13 @@
-class calligraphy_manager {
+class calligraphy_paper {
     paper;
     x;
     y;
-    constructor(id,x,y){
-        this.paper = Raphael(id,1280, 200);
+    constructor(x,y){
         this.x = x;
         this.y = y;
+    }
+    new_paper(id,w,h){
+        this.paper = Raphael(id,w, h);
     }
     draw_rice_character (x,y,font) {
         // 画一个方框
@@ -36,10 +38,20 @@ class calligraphy_manager {
         text.attr("font-size",100 * 0.90);
         text.attr("font-family","STKaiti");
     }
+    // 每张纸
     draw_copy_book(text){
         let texts = text.split("");
-        for (let i = 0; i < texts.length; i++) {
-            this.draw_rice_character(i * 100,0,texts[i])
+        let textsLen = texts.length;
+        let page = parseInt(textsLen/140) + 1;
+        console.log("page:" + page);
+        for (let p = 0; p < page; p++) {
+            // 行数
+            let line_number = 10;
+            for (let i = 0; i < texts.length; i++) {
+                let y = parseInt(i/line_number) * 100;
+                let x = i * 100 - parseInt(i/line_number) * line_number * 100;
+                this.draw_rice_character(x ,y,texts[i])
+            }
         }
     }
     // 清理画布

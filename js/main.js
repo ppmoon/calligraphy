@@ -1,10 +1,15 @@
-let cm = new calligraphy_manager("raphael",10,10);
+let cp = new calligraphy_paper(10,10);
 let input = document.getElementById("input");
 render();
 // 实时渲染
 function render() {
-    cm.clear_paper();
-    cm.draw_copy_book(input.value);
+    if (cp.paper != null) {
+        cp.clear_paper();
+    }
+    let texts = input.value.split("");
+    let textsLen = texts.length;
+    cp.new_paper("raphael",1280,1414 * parseInt(textsLen/140 + 1));
+    cp.draw_copy_book(input.value);
 }
 // 唤起打印机
 function printPage() {
