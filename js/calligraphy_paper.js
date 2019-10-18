@@ -40,18 +40,14 @@ class calligraphy_paper {
     }
     // 每张纸
     draw_copy_book(text){
+        console.log("绘制文字");
         let texts = text.split("");
-        let textsLen = texts.length;
-        let page = parseInt(textsLen/140) + 1;
-        console.log("page:" + page);
-        for (let p = 0; p < page; p++) {
-            // 行数
-            let line_number = 10;
-            for (let i = 0; i < texts.length; i++) {
-                let y = parseInt(i/line_number) * 100;
-                let x = i * 100 - parseInt(i/line_number) * line_number * 100;
-                this.draw_rice_character(x ,y,texts[i])
-            }
+        // 行数
+        let line_number = 10;
+        for (let i = 0; i < texts.length; i++) {
+            let y = parseInt(i/line_number) * 100;
+            let x = i * 100 - parseInt(i/line_number) * line_number * 100;
+            this.draw_rice_character(x ,y,texts[i])
         }
     }
     // 清理画布

@@ -6,10 +6,16 @@ function render() {
     if (cp.paper != null) {
         cp.clear_paper();
     }
-    let texts = input.value.split("");
-    let textsLen = texts.length;
-    cp.new_paper("raphael",1280,1414 * parseInt(textsLen/140 + 1));
-    cp.draw_copy_book(input.value);
+    drawA4(input.value)
+}
+function drawA4(text) {
+    if (text.length > 140) {
+        alert("单张A4纸张的字符串不能超过140个，标点符号也算,请重新输入");
+
+        return
+    }
+    cp.new_paper("raphael",1280,1414);
+    cp.draw_copy_book(text);
 }
 // 唤起打印机
 function printPage() {
