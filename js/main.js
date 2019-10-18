@@ -6,15 +6,26 @@ function render() {
     if (cp.paper != null) {
         cp.clear_paper();
     }
-    drawA4(input.value)
+    document.getElementById("raphael").removeChild();
+    text = input.value;
+    // 判断下 text 的数量如果大于140就插入一个新的div
+    page = parseInt(text.length/140) + 1;
+    for (i = 0;i < page;i++) {
+        let id = "raphael" + i;
+        let div = document.createElement("div");
+        document.getElementById("raphael").appendChild(div);
+        div.setAttribute("id",id);
+        let text_slice = text.slice(i * 140,(i + 1) * 140);
+        drawA4(id,text_slice);
+    }
 }
-function drawA4(text) {
+function drawA4(id,text) {
     if (text.length > 140) {
         alert("单张A4纸张的字符串不能超过140个，标点符号也算,请重新输入");
 
         return
     }
-    cp.new_paper("raphael",1280,1414);
+    cp.new_paper(id,1280,1414);
     cp.draw_copy_book(text);
 }
 // 唤起打印机
