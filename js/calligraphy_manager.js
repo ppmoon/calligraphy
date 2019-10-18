@@ -42,4 +42,8 @@ class calligraphy_manager {
             this.draw_rice_character(i * 100,0,texts[i])
         }
     }
+    // 清理画布
+    clear_paper(){
+        this.paper.clear();
+    }
 }

@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>calligraphy</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <input type="text" id = "input" oninput="render()" name="text" value="书法">
+    <button onclick="printPage()">打印</button>
+    <!--startprint-->
     <div id="raphael"></div>
+    <!--endprint-->
+    <iframe id="printf" src="" width="0" height="0" frameborder="0"></iframe>
     <script src="js/raphael.min.js"></script>
     <script src="js/calligraphy_manager.js"></script>
     <script src="js/main.js"></script>
