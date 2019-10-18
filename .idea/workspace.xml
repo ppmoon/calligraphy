@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="707fc20f-8500-4c59-9387-73bada3eccc5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/calligraphy_manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/calligraphy_manager.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +32,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -73,6 +73,8 @@
       <updated>1571297765201</updated>
       <workItem from="1571297768178" duration="347000" />
       <workItem from="1571298141623" duration="6158000" />
+      <workItem from="1571361099675" duration="49000" />
+      <workItem from="1571361204311" duration="259000" />
     </task>
     <servers />
   </component>

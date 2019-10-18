@@ -37,6 +37,9 @@ class calligraphy_manager {
         text.attr("font-family","STKaiti");
     }
     draw_copy_book(text){
-        
+        let texts = text.split("");
+        for (let i = 0; i < texts.length; i++) {
+            this.draw_rice_character(i * 100,0,texts[i])
+        }
     }
 }
