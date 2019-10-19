@@ -9,13 +9,19 @@ function render() {
     text = input.value;
     // 判断下 text 的数量如果大于140就插入一个新的div
     page = parseInt(text.length/140) + 1;
-    for (i = 0;i < page;i++) {
+    let div;
+    for (i = 0; i < page; i++) {
         let id = "raphael" + i;
-        let div = document.createElement("div");
+        if (!document.getElementById(id)) {
+            div = document.createElement("div");
+        } else {
+            div = document.getElementById(id);
+        }
         document.getElementById("raphael").appendChild(div);
-        div.setAttribute("id",id);
-        let text_slice = text.slice(i * 140,(i + 1) * 140);
-        drawA4(id,text_slice);
+        div.setAttribute("id", id);
+        div.setAttribute("class","a4");
+        let text_slice = text.slice(i * 140, (i + 1) * 140);
+        drawA4(id, text_slice);
     }
 }
 function drawA4(id,text) {
