@@ -3,6 +3,7 @@ let input = document.getElementById("input");
 render();
 // 实时渲染
 function render() {
+    // 监听 oninput 两秒以后没变化再触发
     if (cp.paper != null) {
         cp.clear_paper();
     }
