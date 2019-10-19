@@ -25,9 +25,9 @@ function render() {
     }
 }
 function drawA4(id,text) {
+    console.log("绘制一页"+id);
     if (text.length > 140) {
         alert("单张A4纸张的字符串不能超过140个，标点符号也算,请重新输入");
-
         return
     }
     cp.new_paper(id,1280,1414);
