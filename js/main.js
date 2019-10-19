@@ -6,7 +6,6 @@ function render() {
     if (cp.paper != null) {
         cp.clear_paper();
     }
-    document.getElementById("raphael").removeChild();
     text = input.value;
     // 判断下 text 的数量如果大于140就插入一个新的div
     page = parseInt(text.length/140) + 1;

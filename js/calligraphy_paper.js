@@ -52,6 +52,6 @@ class calligraphy_paper {
     }
     // 清理画布
     clear_paper(){
-        this.paper.clear();
+        this.paper.remove();
     }
 }
