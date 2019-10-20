@@ -1,11 +1,13 @@
-let cp = new calligraphy_paper(10,10);
+let cp = new calligraphy_paper(0,0);
 let input = document.getElementById("input");
 render();
 // 实时渲染
 function render() {
-    // 监听 oninput 两秒以后没变化再触发
     if (cp.paper != null) {
-        cp.clear_paper();
+        let raphael = document.getElementById("raphael");
+        while (raphael.firstChild) {
+            raphael.removeChild(raphael.firstChild);
+        }
     }
     text = input.value;
     // 判断下 text 的数量如果大于140就插入一个新的div
@@ -31,7 +33,7 @@ function drawA4(id,text) {
         alert("单张A4纸张的字符串不能超过140个，标点符号也算,请重新输入");
         return
     }
-    cp.new_paper(id,1280,1414);
+    cp.new_paper(id,1011,1400);
     cp.draw_copy_book(text);
 }
 // 唤起打印机
