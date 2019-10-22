@@ -9,9 +9,15 @@ function render() {
             raphael.removeChild(raphael.firstChild);
         }
     }
-    text = input.value;
+    let text = input.value.trim()
+        .replace(/<\/?[^>]*>/g,'')
+        .replace(/[ | ]*\n/g,'\n')
+        .replace(/\n[\s| | ]*\r/g,'\n')
+        .replace(/ /ig,'')
+        .replace(/^[\s　]+|[\s　]+$/g, "")
+        .replace(/[\r\n]/g,"");
     // 判断下 text 的数量如果大于140就插入一个新的div
-    page = parseInt(text.length/140) + 1;
+    let page = parseInt(text.length/140) + 1;
     let div;
     for (i = 0; i < page; i++) {
         let id = "raphael" + i;
@@ -40,16 +46,16 @@ function drawA4(id,text) {
 function printPage() {
     console.log("执行打印");
     //获取当前页的html代码
-    var bodyhtml = window.document.body.innerHTML;
+    let body_html = window.document.body.innerHTML;
     //设置打印开始区域、结束区域
-    var startFlag = "<!--startprint-->";
-    var endFlag = "<!--endprint-->";
+    let startFlag = "<!--startprint-->";
+    let endFlag = "<!--endprint-->";
     // 要打印的部分
-    var printhtml = bodyhtml.substring(bodyhtml.indexOf(startFlag),
-        bodyhtml.indexOf(endFlag));
-    // 生成并打印ifrme
-    var f = document.getElementById('printf');
-    f.contentDocument.write(printhtml);
+    let print_html = body_html.substring(body_html.indexOf(startFlag),
+        body_html.indexOf(endFlag));
+    // 生成并打印iframe
+    let f = document.getElementById('print');
+    f.contentDocument.write(print_html);
     f.contentDocument.close();
     f.contentWindow.print();
 }
