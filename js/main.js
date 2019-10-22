@@ -16,8 +16,8 @@ function render() {
         .replace(/ /ig,'')
         .replace(/^[\s　]+|[\s　]+$/g, "")
         .replace(/[\r\n]/g,"");
-    // 判断下 text 的数量如果大于140就插入一个新的div
-    let page = parseInt(text.length/140) + 1;
+    // 判断下 text 的数量如果大于140就插入一个新的div,使用141是为了超过一个字的时候才增加下一行
+    let page = parseInt(text.length/141) + 1;
     let div;
     for (i = 0; i < page; i++) {
         let id = "raphael" + i;
@@ -39,7 +39,7 @@ function drawA4(id,text) {
         alert("单张A4纸张的字符串不能超过140个，标点符号也算,请重新输入");
         return
     }
-    cp.new_paper(id,1011,1400);
+    cp.new_paper(id,1011,100 * (text.length / 10 + 1));
     cp.draw_copy_book(text);
 }
 // 唤起打印机

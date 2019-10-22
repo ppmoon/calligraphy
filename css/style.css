@@ -1,24 +1,4 @@
-#raphael{
-}
 .a4 {
     margin-top: 32px;
     margin-bottom: 32px;
-    height: 1400px;
-}
-#container{
-    display: flex;
-    justify-content: center;
-}
-#footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-}
-#console{
-    display: flex;
-    justify-content: center;
-}
-#input{
-    width: 40%;
 }
