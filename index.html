@@ -6,12 +6,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <textarea type="text" id = "input" onkeyup="render()" name="text">书法</textarea>
-    <button onclick="printPage()">打印</button>
-    <!--startprint-->
-    <div id="raphael"></div>
-    <!--endprint-->
-    <iframe id="print" src="" width="0" height="0" frameborder="0"></iframe>
+    <div id = "container">
+        <!--startprint-->
+        <div id="raphael"></div>
+        <!--endprint-->
+        <iframe id="print" src="" width="0" height="0" frameborder="0"></iframe>
+    </div>
+    <div id = "footer">
+        <div id = "console">
+            <textarea type="text" id = "input" onkeyup="render()" name="text">书法</textarea>
+            <button onclick="printPage()">打印</button>
+        </div>
+    </div>
     <script src="js/raphael.min.js"></script>
     <script src="js/calligraphy_paper.js"></script>
     <script src="js/main.js"></script>
