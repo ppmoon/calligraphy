@@ -2,3 +2,7 @@
     margin-top: 32px;
     margin-bottom: 32px;
 }
+#content{
+    overflow-y:hidden;
+    overflow-x:scroll;
+}
